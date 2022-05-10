@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+/*Designed for laptops, large screens*/
+    body{
+      background-color:rgb(20, 21, 25);
+      padding:150px 0 0 35%;
+
+    }
+    .inter-component{
+      width:340px;
+      height:345px;
+      background-color:rgb(31, 38, 48) ;
+      border-radius:16px;
+      padding:35px 35px;
+      /*Center Div*/
+      position:absolute;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+      margin:auto;
+    }
+    .star-cont{
+      background-color:rgb(38, 47, 56) ;
+      display: inline-block;
+      padding:16px 16px 14px 16px;
+      border-radius:50%;
+    }
+    .star-cont>img{
+      width: 16px;
+      height:15px;
+    }
+    h3{
+      font-family: 'Overpass', sans-serif;
+      color:white;
+      font-weight: 500;
+      font-size:28px;
+    }
+    p{
+      font-family: 'Overpass', sans-serif;
+      font-size:15px;
+      color:rgb(149, 158, 172);
+      line-height: 1.5em;
+      margin:-16px 0 0 0;
+    }
+    .flex-container{
+      display: flex;
+      flex-direction: row;
+      gap:1em;
+      color:rgb(149, 158, 172);
+      font-family: 'Overpass', sans-serif;
+      text-align:center;
+      justify-content:space-between;
+      margin:30px 0;
+    }
+    .flex-items{
+      background-color: rgb(38, 47, 56);
+      width:20px;
+      aspect-ratio: 1;
+      padding:15px;
+      border-radius:50%;
+    }
+    .flex-items:hover{
+      background-color: rgb(252, 118, 19);
+      color:white;
+      cursor: pointer;
+    }
+    .submitbtn{
+      background-color: rgb(252, 118, 19);
+      padding:14px; 
+      text-align: center;
+      width:316px;
+      color:white;
+      font-family: 'Overpass', sans-serif;
+      font-size:15px;
+      border-radius: 32px;
+    }
+    .submitbtn:hover{
+      font-weight: 700;
+      color:rgb(252, 118, 19);
+      background-color: white;
+      cursor:pointer;
+    }
+    /*Thank you section*/
+    .thanks{
+      text-align: center;
+      padding:45px 35px;
+      display:none;
+    }
+    div#ratingres{
+      background-color: rgb(38, 47, 56);
+      padding:8px;
+      width:180px;
+      margin:30px 0 20px 70px;
+      border-radius: 32px;
+      color:rgba(255, 137, 52, 0.911);
+      font-family: 'Overpass', sans-serif;
+      font-size:15px;
+
+    }
+    #selectedrate{
+      display: none;
+    }
+
+    .attribution { color:white; font-size: 11px; text-align: center; position:fixed; bottom:15px; right:5px; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    /*For mobile devices*/
+    @media only screen and (max-width:600px) {
+      .inter-component{
+        width:275px;
+      	height:310px;
+      	padding:25px;
+      }
+      .submitbtn{
+        width:90%;
+	font-size:13px;
+      }
+      .flex-container{
+       	font-size: 14px;
+	margin:25px 0;
+      }
+      .flex-items{
+       	padding:13px 12px 11px 12px;
+      }
+      .star-cont{
+	padding:12px 12px 10px 12px;
+     }
+      .star-cont>img{
+      	width:14px;
+      	height:13px;
+      }
+      p{
+      	font-size:14px;
+	margin: -10px 0 0 0;
+      }
+      h3{
+	font-size:22px;
+      }
+      div#ratingres{
+	margin: 30px 0 20px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--Component starts-->
+<section class="rating">
+  <div class="inter-component">
+    <div class="star-cont">
+      <img src="images/icon-star.svg">
+    </div>
+    <h3> How did we do?</h3>
+    <p> Please let us know how we did with your support request. All feedback is appreciated 
+      to help us improve our offering!</p>
+    <!--Rating container-->
+    <div class="flex-container">
+      <div class="flex-items">1</div>
+      <div class="flex-items">2</div>
+      <div class="flex-items">3</div>
+      <div class="flex-items">4</div>
+      <div class="flex-items">5</div>
+    </div>
+    <div class="submitbtn">S U B M I T</div>
+  </div>
+</section>
+<!--Thankyou card section-->
+<section>
+  <div class="inter-component thanks">
+    <div class="thanksimg">
+      <img src="images/illustration-thank-you.svg">
+    </div>
+    <div id="ratingres"></div>
+    <h3>Thank you!</h3>
+    <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+      don’t hesitate to get in touch!</p>
+  </div>
+</section>
+  <p id="selectedrate"></p>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Harleen Kaur</a>
+  </div>
+
+<script>
+const ratelist=document.querySelectorAll('.flex-items')
+console.log(ratelist); 
+
+for(let count=0; count<ratelist.length; count++)
+{
+    ratelist[count].addEventListener('click', clicked);
+
+    function clicked(){
+      /*Create a loop to unckeck other ratings clicked*/
+      for(let y=0; y<ratelist.length; y++)
+      {/*SET bgs and colors to their original state*/
+        ratelist[y].style.backgroundColor='rgb(38, 47, 56)';
+        ratelist[y].style.color='rgb(149, 158, 172)';
+        /*Attach mouseenter and mouseleave events as hover stops working*/
+        ratelist[y].addEventListener('mouseenter', hoverin);
+        ratelist[y].addEventListener('mouseleave', hoverout);
+
+        function hoverin(){
+          this.style.backgroundColor='rgb(252, 118, 19)';
+          this.style.color='white';
+        }
+        function hoverout(){
+          this.style.backgroundColor='rgb(38, 47, 56)';
+          this.style.color='rgb(149, 158, 172)';
+        }
+      };
+
+      /*Change styling of the current element clicked */
+      this.style.backgroundColor='rgb(124, 136, 152)';
+      this.style.color='white';
+      this.addEventListener('mouseleave', hoveroutexc)
+      /*Change mouseleave for current rating*/
+      function hoveroutexc(){
+        this.style.backgroundColor='rgb(124, 136, 152)';
+        this.style.color='white';
+      };
+
+      /*Get the rating selected by the user*/
+      document.getElementById('selectedrate').innerText=this.textContent;
+    }
+};
+const submitted=document.querySelector('.submitbtn');
+      submitted.addEventListener('click',()=>{
+        const setrating=document.getElementById('ratingres');
+        const cpyratepara=document.getElementById('selectedrate');
+        
+        if(cpyratepara.innerText==='')
+        alert('Please select a rating to proceed');
+        else{
+        setrating.innerText=`You selected ${cpyratepara.textContent} out of 5`;
+        document.getElementsByClassName('inter-component')[0].style.display='none';  
+        document.getElementsByClassName('thanks')[0].style.display='block';
+        }
+    });
+</script>
+</body>
+</html>  
