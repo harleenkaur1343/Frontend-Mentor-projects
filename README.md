@@ -6,7 +6,6 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -14,7 +13,6 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -30,22 +28,10 @@ Users should be able to:
 - Select and submit a number rating
 - See the "Thank you" card state after submitting a rating
 
-### Screenshot
-
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/harleenkaur1343/Interactive-rating-frontend-mentor/blob/main/index.html)
+- Live Site URL: [Add live site URL here](https://harleenkaur1343.github.io/Interactive-rating-frontend-mentor/)
 
 ## My process
 Decide the layout - Number of container <div> and all the elements used. Apply css styling to them and adding Javascript at last.
@@ -75,6 +61,5 @@ I would like to build projects where the emphasis is on the advanced practical i
 
 - Website - [Harleen Kaur](https://harleenkaur1343.github.io/)
 - Frontend Mentor - [@harleenkaur1343](https://www.frontendmentor.io/profile/harleenkaur1343)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
 
